@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         DataBaseHandling db=new DataBaseHandling(this);
         Log.d("Insert","Inserting....");
-        db.addContacts(new Contacts("Ravi", "9100000000"));
+        db.addContacts(new Contacts("Ravi", "9100000000"));//commented
         db.addContacts(new Contacts("Anl","9493336624"));
         db.addContacts(new Contacts("devi","7036406367"));
         Log.d("Reading All Contacts","Reading");
