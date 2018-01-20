@@ -1,0 +1,30 @@
+package com.example.devvi.databasehandlingexample;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        DataBaseHandling db=new DataBaseHandling(this);
+        Log.d("Insert","Inserting....");
+        db.addContacts(new Contacts("Ravi", "9100000000"));
+        db.addContacts(new Contacts("Anl","9493336624"));
+        db.addContacts(new Contacts("devi","7036406367"));
+        Log.d("Reading All Contacts","Reading");
+        List<Contacts> contacts=db.getAllContacts();
+        for(Contacts cn:contacts){
+            String log="Id"+cn.get_id()+","+"Name"+cn.get_name()+"," +"Phone Number"+cn.get_phone_number();
+            Log.d("Name",log);
+
+
+        }
+
+    }
+}
